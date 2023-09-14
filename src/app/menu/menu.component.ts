@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { recipe } from './recipeModels/recipe';
+import { recipe } from './models/recipeModels/recipe';
 
 @Component({
   selector: 'app-menu',
@@ -29,7 +29,8 @@ export class MenuComponent {
         "While cooking the noodles, brown the Bob Evans sausage",
         "Once the sausage and noodles are done cooking, add both contents to the same pot and add the spaghetti sauce!"
       ],
-      image: "assets/MenuImages/Spaghetti.jpg"
+      image: "assets/MenuImages/Spaghetti.jpg",
+      id: "spaghetti"
     }
 
     this.items.push(spaghetti);

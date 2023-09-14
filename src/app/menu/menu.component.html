@@ -1,12 +1,14 @@
 
-<div class=menuItem *ngFor="let item of items">
-    <div class="menuImageDiv" *ngIf="item.image">
-        <img class="menuItemImage" src="{{item.image}}">
-    </div>
-    <div class="menuDescription">
-        <div class=menuItemName>{{item.name}}</div>
-        <div class=menuItemCookTime>{{item.cookTime}}</div>
-        <div class=menuItemSummary>{{item.summary}}</div>
-    </div>
+<div *ngFor="let item of items">
+    <a routerLink="{{item.id}}" class="border-black-600 m-4 rounded content-center grid grid-cols-5 border-solid border-2 border-black">
+        <div class="flex h-40 justify-center items-center border-r-4 border-black border-double overflow-hidden" *ngIf="item.image">
+            <img src="{{item.image}}">
+        </div>
+        <div class="col-span-4 rounded-r p-2">
+            <div class="text-xl border-b-2 border-gray-400">{{item.name}}</div>
+            <div >{{item.cookTime}}</div>
+            <div >{{item.summary}}</div>
+        </div>
+    </a>
 </div>
 
