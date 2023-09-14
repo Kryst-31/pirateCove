@@ -1,0 +1,12 @@
+
+<div class=menuItem *ngFor="let item of items">
+    <div class="menuImageDiv" *ngIf="item.image">
+        <img class="menuItemImage" src="{{item.image}}">
+    </div>
+    <div class="menuDescription">
+        <div class=menuItemName>{{item.name}}</div>
+        <div class=menuItemCookTime>{{item.cookTime}}</div>
+        <div class=menuItemSummary>{{item.summary}}</div>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+#titleCard {
+    background-color: grey;
+}
+
+#title {
+    margin: 0;
+}
+
+#buttonBar {
+    width: 100%;
+    background-color: black;
+}
+
+.routeButton {
+    display: inline-block;
+    border: none;
+    background-color: black;
+}
+
+.routeText {
+    color: white;
+    text-decoration: none;
+}
