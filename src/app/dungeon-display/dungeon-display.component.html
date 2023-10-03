@@ -1,0 +1,8 @@
+<div class="p-5 overflow-hidden">
+    <div *ngFor="let row of dungeonExample" class="flex flex-row justify-center">
+        <div *ngFor="let room of row" class="{{room.type}} {{room.attribute}}"></div>
+    </div>
+</div>
+
+
+

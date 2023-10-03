@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { MenuItemComponent } from './menu/components/menu-item/menu-item.component';
+import { DungeonDisplayComponent } from './dungeon-display/dungeon-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    DungeonDisplayComponent,
   ],
   imports: [
     BrowserModule,

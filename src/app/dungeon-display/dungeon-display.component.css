@@ -1,0 +1,45 @@
+.room {
+    border: dashed 1px gray;
+    width: 30px;
+    height: 30px;
+}
+
+.room:hover {
+    background-color: lightgray;
+}
+
+.corner-tl {
+    border-top: solid 3px black;
+    border-left: solid 3px black;
+}
+
+.corner-tr {
+    border-top: solid 3px black;
+    border-right: solid 3px black;
+}
+
+.corner-bl {
+    border-bottom: solid 3px black;
+    border-left: solid 3px black;
+}
+
+.corner-br {
+    border-bottom: solid 3px black;
+    border-right: solid 3px black;
+}
+
+.wall-t {
+    border-top: solid 3px black;
+}
+
+.wall-r {
+    border-right: solid 3px black;
+}
+
+.wall-b {
+    border-bottom: solid 3px black;
+}
+
+.wall-l {
+    border-left: solid 3px black;
+}
