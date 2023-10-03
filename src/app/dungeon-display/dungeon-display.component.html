@@ -1,5 +1,22 @@
+<form class="grid grid-cols-4 px-24 py-5 bg-white">
+    <div>
+        <label>Width: </label>
+        <input class="border-solid border-2 border-slate-500 rounded" type="number" name="Width">
+    </div>
+    <div>
+        <label>Height: </label>
+        <input class="border-solid border-2 border-slate-500 rounded" type="number" name="Height">
+    </div>
+    <div>
+        <label>Rooms: </label>
+        <input class="border-solid border-2 border-slate-500 rounded" type="number" name="Rooms">
+    </div>
+</form>
+<button class="bg-red-300 shadow-lg rounded" (click)="generate()">Generate Room</button>
+
+
 <div class="p-5 overflow-hidden">
-    <div *ngFor="let row of dungeonExample" class="flex flex-row justify-center">
+    <div *ngFor="let row of dungeon" class="flex flex-row justify-center">
         <div *ngFor="let room of row" class="{{room.type}} {{room.attribute}}"></div>
     </div>
 </div>

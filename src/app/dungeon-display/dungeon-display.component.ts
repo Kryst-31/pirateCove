@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Tile } from './models/room';
+import { RandomTileGeneratorService } from './services/random-tile-generator.service';
 
 @Component({
   selector: 'app-dungeon-display',
@@ -7,6 +8,8 @@ import { Tile } from './models/room';
   styleUrls: ['./dungeon-display.component.css']
 })
 export class DungeonDisplayComponent {
+
+  dungeon: Tile[][] = []
 
   dungeonExample: Tile[][] = [
     [
@@ -26,7 +29,11 @@ export class DungeonDisplayComponent {
     ],
   ]
 
-  constructor() {
+  constructor(private randomTileGenerator: RandomTileGeneratorService) {
+  }
+
+  generate() {
+    this.dungeon = this.randomTileGenerator.generate(4,20,20)
   }
 
 }
