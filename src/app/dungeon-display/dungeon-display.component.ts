@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Tile } from './models/room';
 import { RandomTileGeneratorService } from './services/random-tile-generator.service';
 
@@ -7,9 +8,15 @@ import { RandomTileGeneratorService } from './services/random-tile-generator.ser
   templateUrl: './dungeon-display.component.html',
   styleUrls: ['./dungeon-display.component.css']
 })
-export class DungeonDisplayComponent {
+export class DungeonDisplayComponent implements OnInit {
 
   dungeon: Tile[][] = []
+
+  generatorForm = new FormGroup({
+    width: new FormControl(30),
+    height : new FormControl(30),
+    roomCount : new FormControl(4)
+  })
 
   dungeonExample: Tile[][] = [
     [
@@ -32,8 +39,17 @@ export class DungeonDisplayComponent {
   constructor(private randomTileGenerator: RandomTileGeneratorService) {
   }
 
+  ngOnInit() {
+    this.generate()
+  }
+
   generate() {
-    this.dungeon = this.randomTileGenerator.generate(4,20,20)
+    const width = this.generatorForm.get("width")?.value
+    const height = this.generatorForm.get("height")?.value
+    const roomCount = this.generatorForm.get("roomCount")?.value
+    if (width && height && roomCount) {
+      this.dungeon = this.randomTileGenerator.generate(roomCount,width,height)
+    }
   }
 
 }

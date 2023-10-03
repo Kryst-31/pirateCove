@@ -67,7 +67,7 @@ export class RandomTileGeneratorService {
         });
 
         //Only adds room if the distance is satisfactory
-        if (!distances.some( dist => dist < 5)) {
+        if (!distances.some( dist => dist < 7)) {
           this.dungeon[row][column] = {type: "room"};
           roomOrigins.push([row, column])
         }
@@ -85,6 +85,116 @@ export class RandomTileGeneratorService {
   }
 
   private generateRooms(roomOrigins: number[][]) {
-    
+    roomOrigins.forEach((origin) => {
+
+      //START WITH RECTANGLE ROOMS ONLY
+      const originRow = origin[0]
+      const originColumn = origin[1]
+
+      //check distances possible horizontally from the room origin
+      let row = this.dungeon[originRow]
+      let rowRange = this.distanceAvail(originColumn, row)
+
+      //set initial possible width out from room
+      let lowWidth = originColumn - Math.floor(rowRange[0]/2)
+      let highWidth = originColumn + Math.floor(rowRange[1]/2)
+
+      //check distances possible vertically from the room origin and distances possible with vertical span
+      let col = this.dungeon.map(function(value, index) {return value[originColumn]})
+      let colRange = this.distanceAvail(originRow, col)
+
+      //set initial possible height out from room
+      let lowHeight = originRow - Math.floor(colRange[0]/2)
+      let highHeight = originRow + Math.floor(colRange[1]/2)
+
+      //change width or height accordingly to ensure no room overlap
+
+      //change empty spaces to room once generation is done
+      for (let i=lowHeight; i <= highHeight; i++) {
+        for (let j=lowWidth; j<= highWidth; j++) {
+          this.initialRenderTile([i,j], [lowHeight, highHeight], [lowWidth, highWidth], origin);
+        }
+      }
+    })
+  }
+
+  private distanceAvail(originPoint: number, tileArray: Tile[]): number[] {
+    let lowBound = 0;
+    let highBound = 0;
+
+    for (let i=originPoint - 1; i>=0; i--) {
+      if (tileArray[i].type=="empty") {
+        lowBound += 1
+      }
+      else if (tileArray[i].type=="room") {
+        break
+      }
+    }
+
+    for (let i=originPoint + 1; i<tileArray.length; i++) {
+      if (tileArray[i].type=="empty") {
+        highBound += 1
+      }
+      else if (tileArray[i].type=="room") {
+        break
+      }
+    }
+
+    return [lowBound,highBound]
+  }
+
+  private initialRenderTile(tilePoint: number[], rowRange: number[], colRange: number[], originPoint: number[]) {
+    let row = tilePoint[0]
+    let column = tilePoint[1]
+
+    if (this.dungeon[row][column].type == "empty" || tilePoint[0] == originPoint[0] && tilePoint[1] == originPoint[1]) {
+      this.dungeon[row][column]={type:"room"}
+
+      if (row == rowRange[0] && row == rowRange[1] && column == colRange[0] && column == colRange[1]) {
+        this.dungeon[row][column].attribute="closed-room"
+      }
+      else if (row == rowRange[0] && row == rowRange[1] && column == colRange[0]) {
+        this.dungeon[row][column].attribute="deadend-l"
+      }
+      else if (row == rowRange[0] && row == rowRange[1] && column == colRange[1]) {
+        this.dungeon[row][column].attribute="deadend-r"
+      }
+      else if (column == colRange[0] && column == colRange[1] && row == rowRange[0]) {
+        this.dungeon[row][column].attribute="deadend-t"
+      }
+      else if (column == colRange[0] && column == colRange[1] && row == rowRange[1]) {
+        this.dungeon[row][column].attribute="deadend-b"
+      }
+      else if (row == rowRange[0] && column == colRange[0]) {
+        this.dungeon[row][column].attribute="corner-tl"
+      }
+      else if (row == rowRange[0] && column == colRange[1]) {
+        this.dungeon[row][column].attribute="corner-tr"
+      }
+      else if (row == rowRange[1] && column == colRange[0]) {
+        this.dungeon[row][column].attribute="corner-bl"
+      }
+      else if (row == rowRange[1] && column == colRange[1]) {
+        this.dungeon[row][column].attribute="corner-br"
+      }
+      else if (row == rowRange[0] && row == rowRange[1]) {
+        this.dungeon[row][column].attribute="hall-h"
+      }
+      else if (column == colRange[0] && column == colRange[1]) {
+        this.dungeon[row][column].attribute="hall-v"
+      }
+      else if (row == rowRange[0]) {
+        this.dungeon[row][column].attribute="wall-t"
+      }
+      else if (row == rowRange[1]) {
+        this.dungeon[row][column].attribute="wall-b"
+      }
+      else if (column == colRange[0]) {
+        this.dungeon[row][column].attribute="wall-l"
+      }
+      else if (column == colRange[1]) {
+        this.dungeon[row][column].attribute="wall-r"
+      }
+    }
   }
 }

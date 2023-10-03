@@ -1,18 +1,21 @@
-<form class="grid grid-cols-4 px-24 py-5 bg-white">
-    <div>
-        <label>Width: </label>
-        <input class="border-solid border-2 border-slate-500 rounded" type="number" name="Width">
-    </div>
-    <div>
-        <label>Height: </label>
-        <input class="border-solid border-2 border-slate-500 rounded" type="number" name="Height">
-    </div>
-    <div>
-        <label>Rooms: </label>
-        <input class="border-solid border-2 border-slate-500 rounded" type="number" name="Rooms">
-    </div>
-</form>
-<button class="bg-red-300 shadow-lg rounded" (click)="generate()">Generate Room</button>
+    
+<div class="grid grid-cols-4 px-24 py-5 bg-white">
+    <form class="col-span-3 grid grid-cols-3" [formGroup]="generatorForm">
+        <div>
+            <label>Width: </label>
+            <input class="border-solid border-2 border-slate-500 rounded" type="number" formControlName="width">
+        </div>
+        <div>
+            <label>Height: </label>
+            <input class="border-solid border-2 border-slate-500 rounded" type="number" formControlName="height">
+        </div>
+        <div>
+            <label>Rooms: </label>
+            <input class="border-solid border-2 border-slate-500 rounded" type="number" formControlName="roomCount">
+        </div>
+    </form>
+    <button class="bg-red-300 shadow-lg rounded" (click)="generate()">Generate Room</button>
+</div>
 
 
 <div class="p-5 overflow-hidden">

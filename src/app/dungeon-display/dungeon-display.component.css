@@ -2,7 +2,7 @@
     width: 30px;
     height: 30px;
     background-color: lightgray;
-    border: solid 1px black;
+    border: solid 1px gray;
 }
 
 .room {
@@ -13,7 +13,11 @@
 }
 
 .room:hover {
-    background-color: lightgray;
+    background-color: #f2f2f2;
+}
+
+.closed-room {
+    border: solid 3px black;
 }
 
 .corner-tl {
@@ -33,6 +37,35 @@
 
 .corner-br {
     border-bottom: solid 3px black;
+    border-right: solid 3px black;
+}
+
+.deadend-l {
+    border: solid 3px black;
+    border-right: none;
+}
+
+.deadend-r {
+    border: solid 3px black;
+    border-left: none;
+}
+
+.deadend-t {
+    border: solid 3px black;
+    border-bottom: none;
+}
+
+.deadend-b {
+    border: solid 3px black;
+    border-top: none;
+}
+
+.hall-h {
+    border-top: solid 3px black;
+    border-bottom: solid 3px black;
+}
+.hall-v {
+    border-left: solid 3px black;
     border-right: solid 3px black;
 }
 

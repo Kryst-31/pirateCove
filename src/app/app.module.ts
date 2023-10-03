@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { MenuItemComponent } from './menu/components/menu-item/menu-item.component';
 import { DungeonDisplayComponent } from './dungeon-display/dungeon-display.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DungeonDisplayComponent } from './dungeon-display/dungeon-display.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
