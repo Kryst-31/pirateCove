@@ -24,7 +24,7 @@ export class RandomTileGeneratorService {
 
     for (let i=0; i<height; i++) {
       let emptyRow: Tile[] = []
-      for (let j=0; j<height; j++) {
+      for (let j=0; j<width; j++) {
         emptyRow.push({type: "empty"})
       }
       this.dungeon.push(emptyRow)
