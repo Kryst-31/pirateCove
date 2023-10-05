@@ -1,13 +1,13 @@
 
 <div *ngFor="let item of items">
-    <a routerLink="{{item.id}}" class="border-black-600 m-4 rounded content-center grid grid-cols-5 border-solid border-2 border-black">
-        <div class="flex h-40 justify-center items-center border-r-4 border-black border-double overflow-hidden" *ngIf="item.image">
+    <a routerLink="{{item.id}}" class="m-4 rounded-lg content-center grid grid-cols-5 bg-white">
+        <div class="flex h-40 rounded m-2 justify-center items-center overflow-hidden" *ngIf="item.image">
             <img src="{{item.image}}">
         </div>
-        <div class="col-span-4 rounded-r p-2">
+        <div class="col-span-4 p-2">
             <div class="text-xl border-b-2 border-gray-400">{{item.name}}</div>
-            <div >{{item.cookTime}}</div>
-            <div >{{item.summary}}</div>
+            <div style="font-size: 14px;">Cook Time: {{item.cookTime}}</div>
+            <div class="pt-2" >{{item.summary}}</div>
         </div>
     </a>
 </div>
