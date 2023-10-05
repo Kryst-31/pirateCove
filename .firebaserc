@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "pirate-cove-53618"
+  },
+  "targets": {
+    "pirate-cove-53618": {
+      "hosting": {
+        "pirateCove": [
+          "pirate-cove-53618"
+        ]
+      }
+    }
+  }
+}

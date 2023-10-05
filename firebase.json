@@ -1,0 +1,24 @@
+{
+  "hosting": [
+    {
+      "target": "pirateCove",
+      "public": "docs",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "pirateCove",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
