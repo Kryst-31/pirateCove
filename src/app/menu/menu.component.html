@@ -1,7 +1,7 @@
 
 <div *ngFor="let item of items">
     <a routerLink="{{item.id}}" class="m-4 rounded-lg content-center grid grid-cols-5 bg-white">
-        <div class="flex h-40 rounded m-2 justify-center items-center overflow-hidden" *ngIf="item.image">
+        <div class="flex h-40 rounded m-2 justify-center items-center overflow-hidden " *ngIf="item.image">
             <img src="{{item.image}}">
         </div>
         <div class="col-span-4 p-2">
