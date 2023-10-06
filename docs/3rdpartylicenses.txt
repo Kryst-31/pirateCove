@@ -13,16 +13,13 @@ MIT
 @angular/router
 MIT
 
-@firebase/analytics
-Apache-2.0
-
 @firebase/app
 Apache-2.0
 
 @firebase/component
 Apache-2.0
 
-@firebase/installations
+@firebase/firestore
 Apache-2.0
 
 @firebase/logger
@@ -31,9 +28,12 @@ Apache-2.0
 @firebase/util
 Apache-2.0
 
-firebase/analytics
+@firebase/webchannel-wrapper
+Apache-2.0
 
 firebase/app
+
+firebase/firestore
 
 idb
 ISC
