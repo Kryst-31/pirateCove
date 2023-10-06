@@ -1,16 +1,29 @@
 import { Injectable } from '@angular/core';
 import { recipe } from '../models/recipeModels/recipe';
+import { environment } from 'src/environments/environment';
+import { initializeApp } from "firebase/app";
+import { collection, getFirestore, getDocs } from 'firebase/firestore'
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemListService {
 
-  recipeList: recipe [] = []
-  recipeMap = new Map<string, recipe>
+  recipeList: recipe [] = [];
+  recipeMap = new Map<string, recipe>;
+  firebaseApp = initializeApp(environment.firebase);
+  firestore = getFirestore(this.firebaseApp);
+  menuItems = collection(this.firestore, "menuItems")
 
   constructor() {
-    this.dummryRecipe()
+    this.dummryRecipe();
+    this.getMenuItems();
+  }
+
+  async getMenuItems() {
+    
   }
 
   getRecipeItem(id: string): recipe {
@@ -36,7 +49,7 @@ export class ItemListService {
       image: "assets/MenuImages/Spaghetti.jpg",
       id: "spaghetti"
     }
-
+    
     this.recipeList = [spaghetti]
     this.recipeMap.set(spaghetti.id, spaghetti)
   }
