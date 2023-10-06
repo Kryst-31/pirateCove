@@ -10,15 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MenuItemComponent {
 
-  recipeItem: recipe | undefined = undefined
+  recipeItem: recipe | undefined = this.getItem()
 
   constructor(private itemlistService: ItemListService, private route: ActivatedRoute) {
-    this.getItem()
+
   }
 
-  getItem(): void {
+  getItem(): recipe {
     const id = String(this.route.snapshot.paramMap.get('id'));
-    this.recipeItem = this.itemlistService.getRecipeItem(id);
+    return this.itemlistService.getRecipeItem(id);
   }
 
 }
