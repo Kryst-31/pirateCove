@@ -1,0 +1,9 @@
+<div style="min-height: 500px;" class="bg-white rounded-lg shadow-md m-4 p-2">
+    <p class="border-b-2 text-xl font-bold">Cart</p>
+    <div *ngFor="let items of itemsInCart">
+        <button class="inline-block align-middle">
+            <mat-icon fontIcon="close"></mat-icon>
+        </button>
+        {{items.name}}
+    </div>
+</div>

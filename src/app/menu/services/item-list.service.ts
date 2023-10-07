@@ -27,6 +27,7 @@ export class ItemListService {
     this.menuItemsQuery = await getDocs(this.menuItemsCollection)
     this.menuItemsQuery.docs.map((doc) => {
       let newRecipe: recipe = doc.data() as recipe
+      console.log(newRecipe)
       this.recipeList.push(newRecipe)
       this.recipeMap.set(newRecipe.id, newRecipe)
     })

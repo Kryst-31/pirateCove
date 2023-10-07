@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "menu", component: MenuComponent},
   {path: "menu/:id", component: MenuItemComponent},
-  {path: "dungeon-generator", component: DungeonDisplayComponent}
+  {path: "dungeon-generator", component: DungeonDisplayComponent},
 ];
 
 @NgModule({

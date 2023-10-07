@@ -1,14 +1,24 @@
 
-<div *ngFor="let item of items">
-    <a routerLink="{{item.id}}" class="m-4 rounded-lg content-center grid grid-cols-5 bg-white">
-        <div class="flex h-40 rounded m-2 justify-center items-center overflow-hidden " *ngIf="item.image">
-            <img src="{{item.image}}">
+<div class="grid grid-cols-6">
+    <div class="col-span-5">
+        <div *ngFor="let item of items" class="grid grid-cols-12">
+            <a routerLink="{{item.id}}" class="bg-white my-4 ml-4 rounded-l-lg content-center col-span-11 grid grid-cols-5">
+                <div class="flex h-40 rounded m-2 justify-center items-center overflow-hidden " *ngIf="item.image">
+                    <img src="{{item.image}}">
+                </div>
+                <div class="col-span-4 p-2">
+                    <div class="text-xl border-b-2 border-gray-400">{{item.name}}</div>
+                    <div style="font-size: 14px;">Cook Time: {{item.cookTime}}</div>
+                    <div class="pt-2" >{{item.summary}}</div>
+                </div>
+            </a>
+            <div class="flex justify-center bg-white my-4 mr-4 rounded-r-lg" >
+                <button (click)="this.addToCart(item)">
+                    <mat-icon style="font-size: 40px; width: 40px; height: 40px" fontIcon="add_shopping_cart"></mat-icon>
+                </button>
+            </div>
         </div>
-        <div class="col-span-4 p-2">
-            <div class="text-xl border-b-2 border-gray-400">{{item.name}}</div>
-            <div style="font-size: 14px;">Cook Time: {{item.cookTime}}</div>
-            <div class="pt-2" >{{item.summary}}</div>
-        </div>
-    </a>
-</div>
+    </div>
 
+    <app-menu-shopping></app-menu-shopping>
+</div>

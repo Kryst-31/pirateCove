@@ -11,5 +11,11 @@
     </div>
     <h1 class="text-2xl border-b-2 border-gray-400 mb-2">Instructions</h1>
     <li *ngFor="let instruction of recipeItem?.instructions" class="p-1">{{instruction}}</li>
+    <div class="flex justify-center mt-10">
+        <button class="bg-red-300 px-6 py-2 shadow-lg rounded">
+            <mat-icon class="inline-block align-middle" fontIcon="add_shopping_cart"></mat-icon>
+            Add to Shopping List
+        </button>
+    </div>
 </div>
 
