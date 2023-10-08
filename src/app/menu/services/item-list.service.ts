@@ -36,7 +36,6 @@ export class ItemListService {
   async getRecipeItem(id: string): Promise<recipe> {
     let recipeDoc = doc(this.firestore, "menuItems", id);
     let recipeItem = await getDoc(recipeDoc);
-    console.log(recipeItem.data() as recipe);
     return recipeItem.data() as recipe;
   }
 
