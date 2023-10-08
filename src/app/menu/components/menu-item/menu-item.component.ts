@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ItemListService } from '../../services/item-list.service';
 import { recipe } from '../../models/recipeModels/recipe';
 import { ActivatedRoute } from '@angular/router';
@@ -9,9 +9,9 @@ import { ShoppingListService } from '../../services/shopping-list.service';
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css']
 })
-export class MenuItemComponent {
+export class MenuItemComponent implements AfterViewInit {
 
-  recipeItem: recipe | undefined = this.getItem()
+  recipeItem: recipe | undefined = undefined
 
   constructor(
     private itemlistService: ItemListService,
@@ -21,9 +21,13 @@ export class MenuItemComponent {
 
   }
 
-  getItem(): recipe {
+  ngAfterViewInit(): void {
+    this.getItem()
+  }
+
+  async getItem() {
     const id = String(this.route.snapshot.paramMap.get('id'));
-    return this.itemlistService.getRecipeItem(id);
+    this.recipeItem = await this.itemlistService.getRecipeItem(id);
   }
 
   addToCart(): void {
