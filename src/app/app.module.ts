@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { MenuItemComponent } from './menu/components/menu-item/menu-item.component';
 import { DungeonDisplayComponent } from './dungeon-display/dungeon-display.component';
 import { MenuShoppingComponent } from './menu/components/menu-shopping/menu-shopping.component';
+import { HeaderComponent } from './header/header.component';
+import { BannerComponent } from './banner/banner.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { MenuShoppingComponent } from './menu/components/menu-shopping/menu-shop
     MenuItemComponent,
     DungeonDisplayComponent,
     MenuShoppingComponent,
+    HeaderComponent,
+    BannerComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

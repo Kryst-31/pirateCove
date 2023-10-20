@@ -1,11 +1,10 @@
-<div class="bg-gray-900 text-white" id="header">
-  <h1 class="p-5 font-cursive">Pirate Cove Website!</h1>
-  <div class="grid grid-cols-10 h-8" id="directoryBar">
-    <button class="border-r-2 hover:bg-gray-800" routerLink="/home">Home</button>
-    <button class="border-r-2 hover:bg-gray-800" routerLink="/menu">Menu</button>
-    <button class="border-r-2 hover:bg-gray-800" routerLink="/dungeon-generator">Map Generator</button>
-  </div>
+<div class="min-h-full">
+
+  <app-header></app-header>
+  <app-banner></app-banner>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 </div>
-
-
-<router-outlet></router-outlet>
