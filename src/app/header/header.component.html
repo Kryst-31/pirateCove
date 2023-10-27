@@ -8,10 +8,10 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="/home" class="{{isButtonActive('home')}} rounded-md px-3 py-2 text-sm font-medium">Home</a>
-              <a href="/menu" class="{{isButtonActive('menu')}} rounded-md px-3 py-2 text-sm font-medium">Menu</a>
-              <a href="/dungeon-generator" class="{{isButtonActive('dungeon-generator')}} rounded-md px-3 py-2 text-sm font-medium">Dungeon Generator</a>
-              <a href="/ssbu-amiibo" class="{{isButtonActive('ssbu-amiibo')}} rounded-md px-3 py-2 text-sm font-medium">SSBU Amiibo</a>
+              <a [routerLink]="'/home'" class="{{isButtonActive('home')}} rounded-md px-3 py-2 text-sm font-medium">Home</a>
+              <a [routerLink]="'/menu'" class="{{isButtonActive('menu')}} rounded-md px-3 py-2 text-sm font-medium">Menu</a>
+              <a [routerLink]="'/dungeon-generator'" class="{{isButtonActive('dungeon-generator')}} rounded-md px-3 py-2 text-sm font-medium">Dungeon Generator</a>
+              <a [routerLink]="'/ssbu-amiibo'" class="{{isButtonActive('ssbu-amiibo')}} rounded-md px-3 py-2 text-sm font-medium">SSBU Amiibo</a>
             </div>
           </div>
         </div>
@@ -44,9 +44,9 @@
     <div class="md:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="/home" class="{{isButtonActive('Home')}} rounded-md px-3 py-2 text-sm font-medium">Home</a>
-        <a href="/menu" class="{{isButtonActive('Menu')}} rounded-md px-3 py-2 text-sm font-medium">Menu</a>
-        <a href="/dungeon-generator" class="{{isButtonActive('Dungeon Generator')}} rounded-md px-3 py-2 text-sm font-medium">Dungeon Generator</a>
+        <a [routerLink]="'/home'" class="{{isButtonActive('Home')}} rounded-md px-3 py-2 text-sm font-medium">Home</a>
+        <a [routerLink]="'/menu'" class="{{isButtonActive('Menu')}} rounded-md px-3 py-2 text-sm font-medium">Menu</a>
+        <a [routerLink]="'/dungeon-generator'" class="{{isButtonActive('Dungeon Generator')}} rounded-md px-3 py-2 text-sm font-medium">Dungeon Generator</a>
       </div>
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
