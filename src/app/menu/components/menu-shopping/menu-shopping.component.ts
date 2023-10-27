@@ -9,11 +9,15 @@ import { recipe } from '../../models/recipeModels/recipe';
 })
 export class MenuShoppingComponent {
 
-  itemsInCart: recipe [] = [];
+  itemsInCart: Map<string, number> = new Map<string, number>();
 
   constructor(private shoppingListService: ShoppingListService) {
-    this.shoppingListService.itemObservable.subscribe((item) => this.itemsInCart = this.shoppingListService.itemsInCart)
-    this.itemsInCart = this.shoppingListService.itemsInCart
+    this.shoppingListService.itemObservable.subscribe((item) => this.itemsInCart = this.shoppingListService.cart)
+    this.itemsInCart = this.shoppingListService.cart
+  }
+
+  public removeItem(name: string) {
+    this.shoppingListService.removeItem(name)
   }
 
 

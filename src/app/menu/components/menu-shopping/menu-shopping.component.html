@@ -1,9 +1,13 @@
-<div style="min-height: 500px;" class="bg-white rounded-lg shadow-md m-4 p-2">
+<div style="min-height: 500px; margin-top: 16px" class="bg-white rounded-lg shadow-md m-4 p-2">
     <p class="border-b-2 text-xl font-bold">Cart</p>
-    <div *ngFor="let items of itemsInCart">
-        <button class="inline-block align-middle">
-            <mat-icon fontIcon="close"></mat-icon>
-        </button>
-        {{items.name}}
+    <div *ngFor="let items of itemsInCart | keyvalue">
+        <div class="grid grid-cols-4 mt-3">
+            <div class="col-span-3">
+                {{items.key}} - ({{items.value}})
+            </div>
+            <div (click)="removeItem(items.key)" class="text-center font-bold" style="cursor: pointer;">
+                x
+            </div>
+        </div>
     </div>
 </div>
