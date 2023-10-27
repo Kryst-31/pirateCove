@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SSBUAmiiboHomeComponent } from './components/ssbuamiibo-home/ssbuamiibo-home.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "home", pathMatch: "full"},
-  {path: "home", component: SSBUAmiiboHomeComponent}
+  {path: "", component: SSBUAmiiboHomeComponent}
 ];
 
 @NgModule({

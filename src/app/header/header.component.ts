@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { UrlListenerService } from './services/url-listener.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +10,10 @@ export class HeaderComponent {
 
   activeNav: string = ''
 
-  constructor(private router: Router, private urlListener: UrlListenerService) {
+  constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        this.activeNav = this.urlListener.getComponentName(val)
+        this.activeNav = val.url.split("/")[1]
       }
     })
   }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SSBUAmiiboRoutingModule } from './ssbuamiibo-routing.module';
 import { SSBUAmiiboHomeComponent } from './components/ssbuamiibo-home/ssbuamiibo-home.component';
+import { BannerModule } from '../banner/banner.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { SSBUAmiiboHomeComponent } from './components/ssbuamiibo-home/ssbuamiibo
   ],
   imports: [
     CommonModule,
+    BannerModule,
     SSBUAmiiboRoutingModule
   ]
 })

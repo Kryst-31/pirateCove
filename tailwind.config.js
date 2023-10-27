@@ -10,6 +10,7 @@ module.exports = {
     "./src/app/menu/components/menu-item/menu-item.component.{html,ts}",
     "./src/app/menu/components/menu-full/menu-full.component.{html,ts}",
     "./src/app/dungeon-display/components/dungeon-display/dungeon-display.component.{html,ts}",
+    "./src/app/ssbuamiibo-home/components/ssbuamiibo-home/ssbuamiibo-home.component.{html,ts}",
   ],
   theme: {
     extend: {},
