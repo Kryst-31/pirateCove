@@ -7,6 +7,7 @@ import { Router, UrlSerializer, NavigationEnd } from '@angular/router';
 export class UrlListenerService {
 
   bannerNames: {[key: string]: string} = {
+    "": "Home",
     "home": "Home",
     "menu": "Menu",
     "dungeon-generator": "Dungeon Generator"

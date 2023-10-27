@@ -11,7 +11,7 @@ import { MenuItemComponent } from './menu/components/menu-item/menu-item.compone
 import { DungeonDisplayComponent } from './dungeon-display/dungeon-display.component';
 import { MenuShoppingComponent } from './menu/components/menu-shopping/menu-shopping.component';
 import { HeaderComponent } from './header/header.component';
-import { BannerComponent } from './header/banner/banner.component';
+import { BannerComponent } from './banner/banner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
