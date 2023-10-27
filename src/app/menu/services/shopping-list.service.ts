@@ -7,13 +7,35 @@ import { Subject } from 'rxjs';
 })
 export class ShoppingListService {
 
-  itemsInCart: recipe[] = [];
-  itemObservable = new Subject<recipe>();
+  cart: Map<string, number> = new Map<string, number>()
+  itemObservable = new Subject<any>();
 
   constructor() { }
 
-  addToCart(item: recipe) {
-    this.itemsInCart.push(item);
-    this.itemObservable.next(item);
+  public addToCart(item: recipe) {
+    let amount = this.cart.get(item.name)
+    if (amount) {
+      amount += 1;
+      this.cart.set(item.name, amount);
+    } else {
+      this.cart.set(item.name, 1)
+    }
+    this.itemObservable.next(item)
+  }
+
+  public removeItem(name: string) {
+    let amount = this.cart.get(name)
+    switch(amount) {
+      case undefined:
+        break;
+      case 1:
+        this.cart.delete(name);
+        break
+      default:
+        this.cart.set(name, amount - 1)
+        console.log("default")
+    }
+    
+    this.itemObservable.next(name)
   }
 }
