@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "menu", loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule)},
   {path: "dungeon-generator", loadChildren: () => import('./dungeon-display/dungeon-display.module').then(m => m.DungeonDisplayModule)},
+  {path: "ssbu-amiibo", loadChildren: () => import("./ssbuamiibo/ssbuamiibo.module").then(m => m.SSBUAmiiboModule)},
   {path: "**", pathMatch: "full", component: PageNotFoundComponent}
 ];
 
