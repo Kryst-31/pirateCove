@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Tile } from './models/room';
-import { RandomTileGeneratorService } from './services/random-tile-generator.service';
+import { Tile } from '../../models/room';
+import { RandomTileGeneratorService } from '../../services/random-tile-generator.service';
 
 @Component({
   selector: 'app-dungeon-display',

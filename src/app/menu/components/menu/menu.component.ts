@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { recipe } from './models/recipeModels/recipe';
-import { ItemListService } from './services/item-list.service';
-import { ShoppingListService } from './services/shopping-list.service';
+import { recipe } from '../../models/recipeModels/recipe';
+import { ItemListService } from '../../services/item-list.service';
+import { ShoppingListService } from '../../services/shopping-list.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +9,6 @@ import { ShoppingListService } from './services/shopping-list.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-
   items: recipe[] = []
 
   constructor(private itemListService: ItemListService, private shoppingListService: ShoppingListService) {
@@ -23,5 +22,4 @@ export class MenuComponent {
   public addToCart(item: recipe) {
     this.shoppingListService.addToCart(item)
   }
-
 }
